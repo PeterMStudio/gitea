@@ -26,20 +26,4 @@
 		</div>
 	</div>
 
-	{{if not .PageIsWiki}}
-		<div class="flex-items-block clone-panel-list">
-			{{range .OpenWithEditorApps}}
-			<a class="item muted js-clone-url-editor" data-href-template="{{.OpenURL}}">{{.IconHTML}}{{ctx.Locale.Tr "repo.open_with_editor" .DisplayName}}</a>
-			{{end}}
-		</div>
-
-		{{if and (not $.DisableDownloadSourceArchives) $.RefName}}
-		<div class="divider"></div>
-		<div class="flex-items-block clone-panel-list">
-				<a class="item muted archive-link" href="{{$.RepoLink}}/archive/{{PathEscapeSegments $.RefName}}.zip" rel="nofollow">{{svg "octicon-file-zip"}} {{ctx.Locale.Tr "repo.download_zip"}}</a>
-				<a class="item muted archive-link" href="{{$.RepoLink}}/archive/{{PathEscapeSegments $.RefName}}.tar.gz" rel="nofollow">{{svg "octicon-file-zip"}} {{ctx.Locale.Tr "repo.download_tar"}}</a>
-				<a class="item muted archive-link" href="{{$.RepoLink}}/archive/{{PathEscapeSegments $.RefName}}.bundle" rel="nofollow">{{svg "octicon-package"}} {{ctx.Locale.Tr "repo.download_bundle"}}</a>
-		</div>
-		{{end}}
-	{{end}}
 </div>
